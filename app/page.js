@@ -1,95 +1,61 @@
-import Image from 'next/image'
-import styles from './page.module.css'
 
-export default function Home() {
+"use client"
+import React from "react";
+import style from "./page.module.css";
+// import videoOfSignage from "./assets/video.mp4"
+
+
+const Home = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+  
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
+      <div>
+        <header className={style.header}>
+        
+          <div className="overlay"></div>
+          <video playsInline autoPlay muted loop>
+            <source src="/video.mp4" type="video/mp4" />
+          </video>
+          <div className="container h-100">
+            <div className="d-flex h-100 text-center align-items-center">
+              <div className="w-100 text-white">
+                <h2 className="display-4">
+                  Unleash the Power of Exceptional Signage Solutions from the
+                  Leading Signage Manufacturing Company
+                </h2>
+                <hr style={{ height: "2px" }} />
+                <p className="lead mb-0">
+                  Welcome to Signage Works, where excellence meets innovation in
+                  the world of signage manufacturing. As the premier industry
+                  leader, we are dedicated to delivering unmatched signage
+                  solutions that captivate audiences and elevate brands to new
+                  heights. Our passionate craftsmanship, coupled with our
+                  relentless pursuit of quality, sets us apart as the go-to choice
+                  for businesses seeking impactful visual communication. Whether
+                  you require stunning custom-made signs, awe-inspiring outdoor
+                  displays, or sophisticated indoor signage, our expert team
+                  combines state-of-the-art technology with artistic brilliance to
+                  bring your vision to life. Stand out in today's fiercely
+                  competitive marketplace with our tailored solutions that boost
+                  brand visibility, evoke emotions, and leave a lasting
+                  impression. Partner with us and experience the pinnacle of
+                  signage manufacturing excellence, backed by our unwavering
+                  commitment to your success.
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div className="container my-5">
           <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis quam
+            minima perspiciatis eos tenetur. Praesentium dolores at quos aperiam
+            sed, sint provident consectetur incidunt, nostrum porro earum commodi,
+            ex architecto.
           </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+        </div>
+      </div> 
+  );
+};
+
+export default Home;
