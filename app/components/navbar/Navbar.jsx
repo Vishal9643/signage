@@ -8,13 +8,29 @@ import $ from "jquery";
 import axios from "axios";
 import Link from "next/link";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+
+import {
+  fetchFailure,
+  fetchMainSuccess,
+  fetchProductSuccess,
+  fetchStart,
+  fetchSubSuccess,
+} from "@/app/Redux/categoriesSlice";
+
 
 
 const Navbar = () => {
   const [getCategory, setCategory] = useState([]);
   const [getSubCategory, setSubCategory] = useState([]);
   const [getProductCategory, setProductCategory] = useState([]);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const currentMainCategory = useSelector((state) => state.categories.currentMainCategory);
+
+
+  
+
+
 
   useEffect(() => {
     $(window).scroll(function () {
@@ -36,12 +52,12 @@ const Navbar = () => {
 
       setCategory(res.data);
       console.log(res.data);
-      // dispatch(fetchMainSuccess(res.data));
+      dispatch(fetchMainSuccess(res.data));
     };
     fetchCategory();
   }, []);
 
-  // console.log(getCategory);
+  console.log(getCategory);
 
   useEffect(() => {
     const fetchSubCategory = async () => {
@@ -71,7 +87,7 @@ const Navbar = () => {
       console.log(subCategoryData);
 
       setSubCategory(subCategoryData);
-      // dispatch(fetchSubSuccess(subCategoryData));
+      dispatch(fetchSubSuccess(subCategoryData));
     };
 
     if (getCategory.length > 0) {
@@ -119,12 +135,17 @@ const Navbar = () => {
 
       console.log(productCategoryData);
       setProductCategory(productCategoryData);
-      // dispatch(fetchProductSuccess(productCategoryData));
+      dispatch(fetchProductSuccess(productCategoryData));
+
+
+
     };
 
     if (getCategory.length > 0) {
       fetchProductCategory();
     }
+    console.log(currentMainCategory,"visssssssssssssshhhhalll")
+
   }, [getCategory, getSubCategory]);
 
   // console.log(getProductCategory);
